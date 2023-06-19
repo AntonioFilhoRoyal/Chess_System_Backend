@@ -24,11 +24,17 @@ public class ChessMatch {
 		return mat;
 	}
 	
+	private void placeNewPiece(char column, int row, ChessPiece piece) {
+		board.placePiece(piece, new ChessPosition(column, row).toPosition());
+	}
+	
 	// METODO PARA COLOCA A PEÇA NO TABULEIRO
 	private void initialSetup() {
 		// TABULEIRO, PEÇA, POSIÇÃO
-		board.placePiece(new Rook(board, Color.WHITE), new Position(1, 1));
-		board.placePiece(new Rook(board, Color.WHITE), new Position(0, 0));
+		placeNewPiece('b', 8, new Rook(board, Color.WHITE));
+		placeNewPiece('a', 8, new Rook(board, Color.WHITE));
+		placeNewPiece('c', 8, new Rook(board, Color.WHITE));
+		
 	}
 	
 }
