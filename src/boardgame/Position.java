@@ -1,19 +1,19 @@
 package boardgame;
 
 public class Position {
-	private String row;
+	private int row;
 	private int column;
 	
-	public Position(String row, int column) {
+	public Position(int row, int column) {
 		this.row = row;
 		this.column = column;
 	}
 
-	public String getRow() {
+	public int getRow() {
 		return row;
 	}
 
-	public void setRow(String row) {
+	public void setRow(int row) {
 		this.row = row;
 	}
 
