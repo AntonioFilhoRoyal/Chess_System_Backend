@@ -18,6 +18,7 @@ public class App {
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPiece());
 				System.out.println();
+				UI.printMatch(chessMatch);
 				System.out.print("Source: ");
 				ChessPosition source = UI.readChessPositon(sc);
 				boolean[][] possibleMove = chessMatch.possibleMoves(source);
