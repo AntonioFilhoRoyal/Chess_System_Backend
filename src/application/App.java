@@ -1,15 +1,29 @@
 package application;
 
+import java.util.Scanner;
+
 import chess.ChessMatch;
+import chess.ChessPiece;
+import chess.ChessPosition;
 
 public class App {
 
 	public static void main(String[] args) {
-		
-		// CLASS DE REGRAS DO XADREZ, TUDO OQUE FOR REGRAS E JOGO ESTARA AQUI
+		Scanner sc = new Scanner(System.in);
 		ChessMatch chessMatch = new ChessMatch();
-		// CLASS DE IMPRESSÃO DA TABELA
-		UI.printBoard(chessMatch.getPiece());
+	 
+		while (true) {
+			UI.printBoard(chessMatch.getPiece());
+			System.out.println();
+			System.out.print("Source: ");
+			ChessPosition source = UI.readChessPositon(sc);
+
+			System.out.println();
+			System.out.print("Target: ");
+			ChessPosition target = UI.readChessPositon(sc);
+
+			ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+		}
 	}
 
 }
